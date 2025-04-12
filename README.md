@@ -24,7 +24,7 @@ A Full Stack News Website built with React(Frontend), Node+Express+MySQL(Backend
 ### Clone the repository
 
 ```bash
-git clone https://github.com/VinayPatel553/NewsPoint-WebApp.git
+https://github.com/devarshi2002/newspoint-news-website
 cd news-app
 ```
 
