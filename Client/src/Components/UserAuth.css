@@ -1,0 +1,125 @@
+/* === General Layout === */
+.subContainer {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Jost", sans-serif;
+  background: #121212;
+}
+
+.mainContainer {
+  width: 350px;
+  height: 500px;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+}
+
+/* === Hide Checkbox === */
+.checkboxInput {
+  display: none;
+}
+
+/* === Signup Container === */
+.signupContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  top: 0;
+  left: 0;
+  transition: all 0.8s ease-in-out;
+  z-index: 2;
+}
+
+.formLabel {
+  color: #fff;
+  font-size: 2.3em;
+  justify-content: center;
+  display: flex;
+  margin: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+
+.textInput {
+  width: 70%;
+  padding: 12px;
+  background: #e0dede;
+  display: flex;
+  margin: 20px auto;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.submitButton {
+  width: 70%;
+  height: 40px;
+  margin: 20px auto;
+  display: block;
+  color: #fff;
+  background: #573b8a;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background: #6d44b8;
+}
+
+/* === Login Container === */
+.loginContainer {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  background: #eee;
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  top: 100%;
+  left: 0;
+  padding-top: 80px;
+  transition: all 0.8s ease-in-out;
+  z-index: 1;
+}
+
+.loginLabel {
+  color: #573b8a;
+  font-size: 2.3em;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* === Checkbox Checked State === */
+.checkboxInput:checked ~ .signupContainer {
+  transform: translateY(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.checkboxInput:checked ~ .loginContainer {
+  transform: translateY(-100%);
+  z-index: 2;
+}
+
+/* Shrinking label when switching */
+.checkboxInput:checked ~ .signupContainer .formLabel {
+  transform: scale(0.6);
+}
+
+.checkboxInput:checked ~ .loginContainer .loginLabel {
+  transform: scale(1);
+}
